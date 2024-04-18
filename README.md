@@ -15,7 +15,7 @@ For the Machine Learning model, we use 2 layers of bidirectional LSTM (Long Shor
 
 LSTMs can be stacked to create deep LSTM networks, which can learn even more complex patterns in sequential data. Each LSTM layer captures different levels of abstraction and temporal dependencies in the input data. LSTM architecture has a chain structure that contains four neural networks and different memory blocks called **cells.**
 
-![](lstm.png)
+![](img/lstm.png)
 
 Information is retained by the cells and the memory manipulations are done by the **gates.** There are three gates:
 
@@ -35,7 +35,7 @@ The output of the LSTM model is then calculated in the Hidden State. Depending o
 
 ### Dataset
 
-![](dataset.png)
+![](img/dataset.png)
 
 The dataset is a sample of 5728 emails, of which 1368 are spam. Each email is labeled with 0 (not spam) and 1 (spam). The dataset is split into data training (80%) and data testing (20%). Each word in the dataset is converted into a certain unique number, called a token. Then, the sequence of text data is converted into a vector of tokens.
 
@@ -67,17 +67,17 @@ I design the deep learning model using a combination of bidirectional LSTM and A
 
 ### Training
 
-![](train.png)
+![](img/train.png)
 
 The implemented model is trained using the input of a padded dataset with its label. We trained it with the number of epochs=20 and executed 512 batches per epoch. At the end of the training process, we get final accuracy and validation accuracy > 90%.
 
 ### Evaluation
 
-![](plot_accuracy.png)
+![](img/plot_accuracy.png)
 
 From the graphic above, we can see that the model has high accuracy and is well-fitted. We get high accuracy in both the training and validation process. To ensure that the model is good enough to predict spam emails, we use performance metrics that measure precision and recall.
 
-![](confusion_matrix.png)
+![](img/confusion_matrix.png)
 
 We can see that the false prediction of the model is just 20 from a total of 1.146 data trains (1,7452%). We also get high F1 scores (96,32%), precision (95,27%), and (97,4%) that indicate the result of the model is useful and complete.
 
